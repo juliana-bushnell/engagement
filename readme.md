@@ -12,6 +12,7 @@ Folder: OUTPUT
 Render_report.R
 Combined_report.Rmd
 Makefile
+ReadMe
  
 ### Customization
 Finally, we will customize the report using a config file. The user will select which week they want to produce in the tables and graphs of our combined_report. Each part of the output will be customized with whatever week the user would like to view.  
