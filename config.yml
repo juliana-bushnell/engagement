@@ -1,0 +1,3 @@
+default:
+  parameter: "week6"
+  numberparam: 6

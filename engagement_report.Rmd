@@ -27,3 +27,19 @@ Makefile
 
 Finally, we will customize the report using a config file. The user will select which week they want to produce in the tables and graphs of our combined_report. Each part of the output will be customized with whatever week the user would like to view.  
 
+# Unique views figure and graph
+## Unique viewers table
+```{r, unique viewers table}
+table <- readRDS(
+  file = here::here(paste0("output/week",configlist$numberparam,"_Unique_views_table.rds"))
+)
+table
+```
+## Unique viewers figure
+```{r, Unique viewers bar plot}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics(
+  here::here(paste0("output/week",configlist$numberparam,"_Unique_views_barplot.png"))
+)
+```
