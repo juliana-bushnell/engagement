@@ -9,7 +9,6 @@ output/01_unique_views.rds: code/01_unique_views.R
 output/02_total_views.rds: code/02_total_views.R
 	Rscript code/02_total_views.R
 
-
 #! create output 3 code/03_video_length.R
 output/03_video_length.rds: code/03_video_length.R
 	Rscript code/03_video_length.R
