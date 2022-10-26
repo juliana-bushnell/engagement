@@ -31,7 +31,7 @@ Finally, we will customize the report using a config file. The user will select 
 configlist<-config::get()
 ```
 
-# Unique views figure and graph
+# Unique viewers figure and graph
 ## Unique viewers table
 ```{r, unique viewers table}
 table <- readRDS(
@@ -48,22 +48,31 @@ knitr::include_graphics(
 )
 ```
 
+# Total views figure and graph
+## Total views table
+```{r, total views table}
+table <- readRDS(
+  file = here::here(paste0("output/week",configlist$numberparam,"_total_views_table.rds"))
+)
+table
+```
 
-# 02 video length table and plot chunk here
-
-
-
-
+##Total views figure
+```{r, total views barplot}
+knitr::include_graphics(
+  here::here(paste0("output/week",configlist$numberparam,"_total_views_barplot.png"))
+)
+```
 
 # Video Length table and graph
-## video length table
+## Video length table
 ```{r, video length table}
 table <- readRDS(
   file = here::here(paste0("output/week",configlist$numberparam,"_video_length_table.rds"))
 )
 table
 ```
-## Unique viewers figure
+## Video length figure
 ```{r, video length bar plot}
 #| fig.align = "center",
 #| out.width = "600px"
