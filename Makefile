@@ -1,5 +1,5 @@
 #! build the report
-engagement_report.html: code/render_report.R output_unique_views output_total_views output_video_length
+report: code/render_report.R output_unique_views output_video_length
 	Rscript code/render_report.R
 #! create output 1 code/01_unique_views.R
 output_unique_views: code/01_unique_views.R
@@ -16,5 +16,6 @@ output_video_length: code/03_video_length.R
 .PHONY: clean
 clean: clean
 	rm -f output/*.rds && rm -f output/*.png && rm -f output/*.pdf && rm -f output/*.pdf 
+
 
 
