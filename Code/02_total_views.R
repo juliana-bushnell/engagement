@@ -1,5 +1,6 @@
 library(dplyr)
 library(here)
+library(ggplot2)
 
 here::i_am("code/02_total_views.R")
 
