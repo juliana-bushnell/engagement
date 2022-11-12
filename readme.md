@@ -10,6 +10,8 @@ make install
 
 ## Select week of interest
 
+ex. if you are interested in week 6
+
 run
 
 ```{bash}
