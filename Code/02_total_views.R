@@ -1,7 +1,8 @@
-library(dplyr)
 library(here)
+library(dplyr)
+library(tidyverse)
+library(gtsummary)
 library(ggplot2)
-library(tidyr)
 
 here::i_am("code/02_total_views.R")
 

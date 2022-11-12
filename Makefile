@@ -1,5 +1,5 @@
 #! build the report
-report: code/render_report.R output_unique_views output_video_length
+report: code/render_report.R output_unique_views output_video_length output_total_views
 	Rscript code/render_report.R
 #! create output 1 code/01_unique_views.R
 output_unique_views: code/01_unique_views.R
