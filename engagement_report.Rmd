@@ -28,7 +28,7 @@ Makefile
 Finally, we will customize the report using a config file. The user will select which week they want to produce in the tables and graphs of our combined_report. Each part of the output will be customized with whatever week the user would like to view.  
 
 ```{r, include=FALSE}
-configlist<-config::get()
+week_select <- as.numeric(Sys.getenv("WEEK"))
 ```
 
 # Unique views figure and graph
@@ -69,7 +69,7 @@ knitr::include_graphics(
 ## video length table
 ```{r, video length table}
 table <- readRDS(
-  file = here::here(paste0("output/week",configlist$numberparam,"_video_length_table.rds"))
+  file = here::here(paste0("output/week",week_select,"_video_length_table.rds"))
 )
 table
 ```
@@ -78,6 +78,6 @@ table
 #| fig.align = "center",
 #| out.width = "600px"
 knitr::include_graphics(
-  here::here(paste0("output/week",configlist$numberparam,"_video_length_plot.png"))
+  here::here(paste0("output/week",week_select,"_video_length_plot.png"))
 )
 ```

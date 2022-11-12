@@ -16,6 +16,10 @@ output_video_length: code/03_video_length.R
 .PHONY: clean
 clean: clean
 	rm -f output/*.*
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
 
 
 
