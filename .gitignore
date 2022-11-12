@@ -1,12 +1,4 @@
-Output/*.png
-Output/*.PNG
-Output/*.jpg
-Output/*.JPG
-Output/*.rds
-Output/*.RDS
-Output/*.RData
-Output/*.RDATA
-Output/*.RDS
+Output/*.*
 
 *.html
 .DS_Store
