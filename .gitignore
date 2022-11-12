@@ -1,4 +1,6 @@
-Output/*.*
+output/*.png
+output/*.rds
+output/*.RData
 *.html
 .DS_Store
 .Rhistory
