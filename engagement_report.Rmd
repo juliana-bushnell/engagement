@@ -35,7 +35,7 @@ week_select <- as.numeric(Sys.getenv("WEEK"))
 ## Unique viewers table
 ```{r, unique viewers table}
 table <- readRDS(
-  file = here::here(paste0("output/week",configlist$numberparam,"_Unique_views_table.rds"))
+  file = here::here(paste0("output/week",week_select,"_Unique_views_table.rds"))
 )
 table
 ```
@@ -44,7 +44,7 @@ table
 #| fig.align = "center",
 #| out.width = "600px"
 knitr::include_graphics(
-  here::here(paste0("output/week",configlist$numberparam,"_Unique_views_barplot.png"))
+  here::here(paste0("output/week",week_select,"_Unique_views_barplot.png"))
 )
 ```
 
@@ -52,7 +52,7 @@ knitr::include_graphics(
 ## Total views table
 ```{r, total views table}
 table <- readRDS(
-  file = here::here(paste0("output/week",configlist$numberparam,"_total_views_table.rds"))
+  file = here::here(paste0("output/week",week_select,"_total_views_table.rds"))
 )
 table
 ```
@@ -60,7 +60,7 @@ table
 ##Total views figure
 ```{r, total views barplot}
 knitr::include_graphics(
-  here::here(paste0("output/week",configlist$numberparam,"_total_views_barplot.png"))
+  here::here(paste0("output/week",week_select,"_total_views_barplot.png"))
 )
 ```
 
