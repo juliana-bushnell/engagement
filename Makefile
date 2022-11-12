@@ -15,7 +15,7 @@ output_video_length: code/03_video_length.R
 
 .PHONY: clean
 clean: clean
-	rm -f output/*.rds && rm -f output/*.png && rm -f output/*.pdf && rm -f output/*.pdf 
+	rm -f output/*.*
 
 
 

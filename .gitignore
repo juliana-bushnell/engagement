@@ -1,6 +1,13 @@
 Output/*.png
+Output/*.PNG
+Output/*.jpg
+Output/*.JPG
 Output/*.rds
+Output/*.RDS
 Output/*.RData
+Output/*.RDATA
+Output/*.RDS
+
 *.html
 .DS_Store
 .Rhistory
