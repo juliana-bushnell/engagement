@@ -1,7 +1,7 @@
 ---
 title: "Engagement_report"
 author: "Group 1"
-date: "10/20/2022"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
@@ -28,14 +28,14 @@ Makefile
 Finally, we will customize the report using a config file. The user will select which week they want to produce in the tables and graphs of our combined_report. Each part of the output will be customized with whatever week the user would like to view.  
 
 ```{r, include=FALSE}
-configlist<-config::get()
+week_select <- as.numeric(Sys.getenv("WEEK"))
 ```
 
 # Unique viewers figure and graph
 ## Unique viewers table
 ```{r, unique viewers table}
 table <- readRDS(
-  file = here::here(paste0("output/week",configlist$numberparam,"_Unique_views_table.rds"))
+  file = here::here(paste0("output/week",week_select,"_Unique_views_table.rds"))
 )
 table
 ```
@@ -44,7 +44,7 @@ table
 #| fig.align = "center",
 #| out.width = "600px"
 knitr::include_graphics(
-  here::here(paste0("output/week",configlist$numberparam,"_Unique_views_barplot.png"))
+  here::here(paste0("output/week",week_select,"_Unique_views_barplot.png"))
 )
 ```
 
@@ -52,7 +52,7 @@ knitr::include_graphics(
 ## Total views table
 ```{r, total views table}
 table <- readRDS(
-  file = here::here(paste0("output/week",configlist$numberparam,"_total_views_table.rds"))
+  file = here::here(paste0("output/week",week_select,"_total_views_table.rds"))
 )
 table
 ```
@@ -60,15 +60,16 @@ table
 ##Total views figure
 ```{r, total views barplot}
 knitr::include_graphics(
-  here::here(paste0("output/week",configlist$numberparam,"_total_views_barplot.png"))
+  here::here(paste0("output/week",week_select,"_total_views_barplot.png"))
 )
 ```
+
 
 # Video Length table and graph
 ## Video length table
 ```{r, video length table}
 table <- readRDS(
-  file = here::here(paste0("output/week",configlist$numberparam,"_video_length_table.rds"))
+  file = here::here(paste0("output/week",week_select,"_video_length_table.rds"))
 )
 table
 ```
@@ -77,6 +78,6 @@ table
 #| fig.align = "center",
 #| out.width = "600px"
 knitr::include_graphics(
-  here::here(paste0("output/week",configlist$numberparam,"_video_length_plot.png"))
+  here::here(paste0("output/week",week_select,"_video_length_plot.png"))
 )
 ```

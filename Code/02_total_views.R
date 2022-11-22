@@ -1,10 +1,13 @@
-library(dplyr)
+
 library(here)
+library(dplyr)
+library(tidyverse)
+library(gtsummary)
 library(ggplot2)
 
 here::i_am("code/02_total_views.R")
 
-configlist<-config::get()
+week_select <- as.numeric(Sys.getenv("WEEK"))
 
 # load data
 data <- read.csv(here::here("course_engagement.csv"), header=TRUE)
@@ -23,22 +26,23 @@ data1 <- data %>%
   pivot_wider(names_from = video_number,
               values_from = views, names_prefix = "video")
 
-configlist$parameter<-data1%>%slice(configlist$numberparam)
+
+dat_for_table <- data1 %>% slice(week = week_select)
 
 saveRDS(
-  configlist$parameter,
-  file = here::here(paste0("output/week",configlist$numberparam,"_total_views_table.rds")
+  dat_for_table,
+  file = here::here(paste0("output/week",week_select,"_total_views_table.rds")
   ))
 
 # create visualization
-data3 <- data %>% filter(week == configlist$numberparam)
+data3 <- data %>% filter(week == week_select)
 
 barplot <- ggplot(data3, aes(x=video_number, y=views)) +
   geom_bar(stat = "identity") + ggtitle("Views for each video in week **") +
   xlab("Video number") + ylab("Views")
 
 ggsave(
-  here::here(paste0("output/week",configlist$numberparam,"_total_views_barplot.png")),
+  here::here(paste0("output/week",week_select,"_total_views_barplot.png")),
   plot=barplot,
   device = "png"
 )
